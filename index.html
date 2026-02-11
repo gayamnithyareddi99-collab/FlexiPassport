@@ -188,13 +188,13 @@ function closeMenu(){
       FlexiPassport is a modern digital identity and compliance platform
       built for organisations working in regulated and operationally
       complex environments. It enables faster onboarding, continuous
-      verification, and trusted compliance—without slowing down
+      verification, and trusted compliance without slowing down
       everyday business operations.
     </p>
 
     <div class="actions">
-      <a href="#" class="btn-main">Request a Live Demo</a>
-      <a href="#" class="btn-alt">Explore the Platform</a>
+      <a href="#contact" class="btn-main">Request a Live Demo</a>
+      <a href="#Problem -> Solution" class="btn-alt">PROBLEM → SOLUTION</a>
     </div>
 
   </div>
@@ -364,7 +364,7 @@ window.addEventListener('mousemove', e=>{
     <p class="about-lead">
       FlexiPassport was created to solve real operational and compliance
       challenges faced by modern organisations. In regulated environments,
-      identity verification is not just a requirement — it is the foundation
+      identity verification is not just a requirement it is the foundation
       of trust, safety, and business continuity.
     </p>
 
@@ -381,7 +381,7 @@ window.addEventListener('mousemove', e=>{
     <p class="about-body">
       Designed for scalability and built with enterprise-grade security,
       FlexiPassport supports organisations across workforce management,
-      logistics, and compliance-driven industries — without adding
+      logistics, and compliance-driven industries without adding
       operational complexity or compromising regulatory standards.
     </p>
 
@@ -553,7 +553,7 @@ aboutObserver.observe(about);
         <span class="founder-role">Founder & Chief Executive Officer</span>
 
         <p>
-          FlexiPassport was founded with a clear purpose — to bring structure,
+          FlexiPassport was founded with a clear purpose to bring structure,
           transparency, and trust into identity and compliance-driven operations.
           Vyshnavi Boda identified a critical gap where manual checks,
           disconnected systems, and human error were slowing organisations
@@ -563,7 +563,7 @@ aboutObserver.observe(about);
         <p>
           With strong exposure to workforce operations and compliance
           environments, she shaped FlexiPassport as a system that respects
-          people, processes, and regulatory responsibility — without
+          people, processes, and regulatory responsibility without
           sacrificing efficiency or scalability.
         </p>
 
@@ -1130,7 +1130,7 @@ rows.forEach(r=>{
       </div>
 
       <p class="ws-text">
-        Most platforms solve compliance in isolation — focusing on
+        Most platforms solve compliance in isolation focusing on
         documents, checks, or storage. FlexiPassport is designed
         differently. It operates as a connected identity system
         where verification, compliance, and trust work together
@@ -1917,7 +1917,10 @@ new IntersectionObserver(e=>{
       <span>Identity, Compliance, and Trust</span>
     </h2>
 
-    <div class="about-rule"></div>
+    <div class="about-rule">
+  <span class="about-travel"></span>
+</div>
+
 
     <div class="about-content">
 
@@ -1926,7 +1929,7 @@ new IntersectionObserver(e=>{
         <p>
           FlexiPassport is a digital identity and compliance platform
           designed to solve one of the biggest challenges in modern
-          workforce operations — fragmented verification and regulatory risk.
+          workforce operations fragmented verification and regulatory risk.
         </p>
 
         <p>
@@ -1936,10 +1939,10 @@ new IntersectionObserver(e=>{
           exposure, and weakens trust across organisations.
         </p>
 
-        <p>
+        <p class="about-highlight">
           FlexiPassport replaces this complexity with a single,
           secure, and portable digital identity that works across
-          agencies, sites, and roles — without compromising privacy
+          agencies, sites, and roles without compromising privacy
           or compliance standards.
         </p>
       </div>
@@ -1992,6 +1995,49 @@ new IntersectionObserver(e=>{
     #f8fafc
   );
   z-index:-2;
+}
+/* DIVIDER – TRAVELLING LIGHT */
+.about-rule{
+  position:relative;
+  width:180px;
+  height:3px;
+  background:#020617;
+  margin:40px auto 90px;
+  overflow:hidden;
+}
+
+.about-travel{
+  position:absolute;
+  top:0;
+  left:-60px;
+  width:60px;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #f3ebeb,
+    transparent
+  );
+  animation:aboutMove 2s infinite ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes aboutMove{
+  0%{
+    left:-60px;
+    opacity:0;
+  }
+  20%{
+    opacity:1;
+  }
+  60%{
+    left:180px;
+    opacity:1;
+  }
+  100%{
+    left:180px;
+    opacity:0;
+  }
 }
 
 /* TEXTURE */
@@ -2149,7 +2195,7 @@ new IntersectionObserver(e=>{
 
         <p>
           Regulations like Right to Work and the AWR 12-week rule are enforced
-          reactively — often after damage is done — exposing businesses to
+          reactively often after damage is done exposing businesses to
           heavy penalties and operational delays.
         </p>
       </div>
@@ -2170,7 +2216,7 @@ new IntersectionObserver(e=>{
         <p>
           By combining Self-Sovereign Identity, automated verification,
           and real-time compliance tracking, FlexiPassport replaces
-          paperwork with trust — and risk with confidence.
+          paperwork with trust and risk with confidence.
         </p>
       </div>
 
@@ -2385,7 +2431,7 @@ new IntersectionObserver(e=>{
           required constant manual effort, and visibility remained limited.
         </p>
 
-        <p class="muted">
+        <p class="strong">
           Operational risk increased as workforce scale and complexity grew.
         </p>
       </div>
@@ -3249,19 +3295,19 @@ document.querySelectorAll('.faq-question').forEach(q=>{
 
     <p class="contact-sub">
       Reach out to us and discover how FlexiPassport simplifies identity,
-      compliance, and workforce onboarding — without complexity.
+      compliance, and workforce onboarding without complexity.
     </p>
 
     <!-- ACTIONS -->
     <div class="contact-actions">
       <a 
-        href="mailto:info@flexipassport.com?subject=Demo%20Request%20-%20FlexiPassport&body=Hello%20FlexiPassport%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20demo%20and%20learn%20more%20about%20FlexiPassport.%0D%0A%0D%0ACompany%20Name:%0D%0AIndustry:%0D%0AContact%20Number:%0D%0A%0D%0ARegards,"
+        href="mailto:flexipassport@Outlook.com?subject=Demo%20Request%20-%20FlexiPassport&body=Hello%20FlexiPassport%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20demo%20and%20learn%20more%20about%20FlexiPassport.%0D%0A%0D%0ACompany%20Name:%0D%0AIndustry:%0D%0AContact%20Number:%0D%0A%0D%0ARegards,"
         class="contact-btn primary">
         Request a Demo
       </a>
 
       <a 
-        href="mailto:info@flexipassport.com?subject=General%20Enquiry%20-%20FlexiPassport&body=Hello%20FlexiPassport%20Team,%0D%0A%0D%0AI%20have%20a%20general%20enquiry%20about%20FlexiPassport.%0D%0A%0D%0ARegards,"
+        href="mailto:flexipassport@Outlook.com?subject=General%20Enquiry%20-%20FlexiPassport&body=Hello%20FlexiPassport%20Team,%0D%0A%0D%0AI%20have%20a%20general%20enquiry%20about%20FlexiPassport.%0D%0A%0D%0ARegards,"
         class="contact-btn secondary">
         General Enquiry
       </a>
