@@ -50,7 +50,7 @@ body{
     <a href="#founder" onclick="closeMenu()">Founder</a>
     <a href="#features" onclick="closeMenu()">Features</a>
     <a href="#process" onclick="closeMenu()">Process</a>
-    <a href="#why" onclick="closeMenu()">why-ultra</a>
+    <a href="#why" onclick="closeMenu()">why</a>
     <a href="#faq" onclick="closeMenu()">FAQ</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
   </div>
@@ -1346,16 +1346,84 @@ rows.forEach(r=>{
   fill:#ffffff;
 }
 
-/* MOBILE */
+/* ================= MOBILE PREMIUM VERSION ================= */
 @media(max-width:900px){
-  .why-split{padding:150px 20px;}
+
+  .why-split{
+    padding:120px 24px;
+  }
+
   .ws-wrap{
     grid-template-columns:1fr;
-    gap:80px;
+    gap:70px;
+    text-align:center;
   }
-  .ws-title{font-size:36px;}
-  .ws-title span{font-size:26px;}
+
+  /* TITLE ADJUST */
+  .ws-title{
+    font-size:32px;
+    line-height:1.2;
+  }
+
+  .ws-title span{
+    font-size:22px;
+  }
+
+  /* LEFT CONTENT */
+  .ws-left{
+    text-align:center;
+  }
+
+  .ws-text{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .ws-highlight{
+    font-size:16px;
+  }
+
+  /* DIAGRAM FIX */
+  .ws-right{
+    display:flex;
+    justify-content:center;
+  }
+
+  .ws-diagram{
+    width:320px;
+    height:320px;
+    transform:scale(0.9);
+  }
+
+  /* BOX SIZE REDUCE */
+  .ws-box{
+    width:120px;
+    font-size:12px;
+    padding:12px;
+  }
+
+  .ws-box strong{
+    font-size:13px;
+  }
+
+  .ws-box span{
+    font-size:10px;
+  }
+
+  /* POSITIONS ADJUSTED */
+  .center{top:125px; left:100px;}
+  .top{top:0; left:100px;}
+  .bottom{bottom:0; left:100px;}
+  .left{left:0; top:125px;}
+  .right{right:0; top:125px;}
+
+  /* SVG SCALE */
+  .ws-lines{
+    transform:scale(0.8);
+    transform-origin:center;
+  }
 }
+
 </style>
 
 <script>
@@ -2355,18 +2423,78 @@ new IntersectionObserver(e=>{
   color:#94a3b8;
 }
 
-/* MOBILE */
+/* ================= PRO PREMIUM MOBILE ================= */
 @media(max-width:900px){
-  .ps-black{padding:150px 20px;}
-  .ps-title{font-size:38px;}
-  .ps-title span{font-size:26px;}
+
+  .ps-black{
+    padding:120px 24px;
+  }
+
+  /* TITLE */
+  .ps-title{
+    font-size:32px;
+    line-height:1.2;
+    text-align:center;
+  }
+
+  .ps-title span{
+    font-size:22px;
+  }
+
+  /* DIVIDER */
+  .ps-divider{
+    margin:40px auto 70px;
+    width:140px;
+  }
+
+  /* FLOW LAYOUT */
   .ps-flow{
     grid-template-columns:1fr;
-    gap:40px;
+    gap:50px;
+    text-align:center;
   }
+
+  /* BLOCKS */
+  .ps-block{
+    text-align:center;
+    padding:0 5px;
+  }
+
+  .ps-block h3{
+    font-size:22px;
+    margin-bottom:14px;
+  }
+
+  .ps-block p{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  /* ARROW */
   .ps-arrow{
     transform:rotate(90deg);
-    text-align:center;
+    font-size:36px;
+    margin:10px 0;
+    opacity:0.6;
+  }
+
+  /* ENERGY LINE (IF EXISTS) */
+  .ps-energy{
+    width:100%;
+    height:2px;
+    margin:20px 0;
+    background:linear-gradient(90deg, transparent, #ffffff, transparent);
+  }
+
+  /* STATEMENT */
+  .ps-statement{
+    margin-top:80px;
+    padding:0 10px;
+  }
+
+  .ps-statement p{
+    font-size:16px;
+    line-height:1.6;
   }
 }
 </style>
@@ -2662,27 +2790,76 @@ new IntersectionObserver(e=>{
   line-height:1.7;
 }
 
-/* MOBILE */
+/* ================= PRO PREMIUM MOBILE ================= */
 @media(max-width:900px){
-  .ba-ultra-plus{padding:150px 20px;}
-  .ba-title{font-size:36px;}
-  .ba-title span{font-size:26px;}
+
+  .ba-ultra-plus{
+    padding:120px 24px;
+  }
+
+  /* TITLE */
+  .ba-title{
+    font-size:30px;
+    line-height:1.2;
+    text-align:center;
+  }
+
+  .ba-title span{
+    font-size:20px;
+  }
+
+  /* CONTENT STACK */
   .ba-content{
     grid-template-columns:1fr;
-    gap:60px;
+    gap:50px;
+    text-align:center;
   }
+
+  /* BEFORE & AFTER BLOCKS */
+  .ba-block{
+    padding:0 6px;
+  }
+
+  .ba-block h3{
+    font-size:20px;
+    margin-bottom:14px;
+  }
+
+  .ba-block p{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  /* CENTER LINE UPGRADE */
   .ba-center-line{
     width:100%;
-    height:1px;
+    height:2px;
+    margin:10px 0 30px;
     background:linear-gradient(
       90deg,
       transparent,
-      #020617,
+      rgba(2,6,23,0.6),
       transparent
     );
   }
-  .ba-side{display:none;}
+
+  /* OPTIONAL ICON / LABEL SIZE FIX */
+  .ba-label{
+    font-size:13px;
+    letter-spacing:0.25em;
+  }
+
+  /* SIDE BIG WORD HIDE */
+  .ba-side{
+    display:none;
+  }
+
+  /* EXTRA BALANCE SPACE */
+  .ba-wrap{
+    gap:60px;
+  }
 }
+
 </style>
 
 <script>
