@@ -25,9 +25,41 @@ body{
   color:var(--white);
   overflow-x:hidden;
 }
+</style>
+</head>
 
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+  <div class="logo">FlexiPassport</div>
+
+  <!-- HAMBURGER (MOBILE) -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- MENU LINKS -->
+  <div class="nav-links" id="navLinks">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#founder" onclick="closeMenu()">Founder</a>
+    <a href="#features" onclick="closeMenu()">Features</a>
+    <a href="#process" onclick="closeMenu()">Process</a>
+    <a href="#why" onclick="closeMenu()">why-ultra</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+
+</nav>
+
+<style>
 /* NAVBAR */
-nav{
+.navbar{
   position:fixed;
   top:0; left:0; right:0;
   height:70px;
@@ -41,255 +73,103 @@ nav{
   z-index:1000;
 }
 
+/* LOGO */
 .logo{
   font-size:22px;
   font-weight:800;
   letter-spacing:1px;
-  color:var(--silver);
+  color:#c9ccd6;
 }
 
-nav a{
-  margin-left:28px;
+/* LINKS (DESKTOP) */
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links a{
   text-decoration:none;
-  color:var(--white);
+  color:#ffffff;
   font-size:14px;
   opacity:0.85;
+  transition:0.3s ease;
 }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  padding:160px 8% 120px;
-  text-align:center;
-  position:relative;
+.nav-links a:hover{
+  opacity:1;
+  color:#c9ccd6;
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at top, var(--silver-soft), transparent 55%);
-  z-index:-1;
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
 }
 
-.hero h1{
-  font-size:52px;
-  font-weight:900;
-  line-height:1.15;
-  margin-bottom:24px;
+.menu-toggle span{
+  width:26px;
+  height:2px;
+  background:#ffffff;
+  transition:0.3s ease;
 }
 
-.hero h1 span{
-  color:var(--silver);
-}
-
-.hero p{
-  max-width:900px;
-  margin:0 auto 42px;
-  font-size:18px;
-  line-height:1.7;
-  color:var(--silver);
-}
-
-.hero-buttons a{
-  display:inline-block;
-  margin:10px;
-  padding:16px 44px;
-  border-radius:999px;
-  font-weight:700;
-  text-decoration:none;
-  transition:0.35s ease;
-}
-
-.btn-primary{
-  background:var(--white);
-  color:var(--black);
-  box-shadow:0 18px 50px rgba(255,255,255,0.35);
-}
-
-.btn-outline{
-  border:1px solid var(--silver);
-  color:var(--silver);
-}
-
-.btn-primary:hover,
-.btn-outline:hover{
-  transform:translateY(-4px);
-}
-
-/* SECTION */
-section{
-  padding:120px 8%;
-}
-
-.section-title{
-  text-align:center;
-  font-size:40px;
-  margin-bottom:14px;
-}
-
-.section-sub{
-  text-align:center;
-  max-width:850px;
-  margin:0 auto 70px;
-  color:var(--silver);
-  font-size:17px;
-}
-
-/* FEATURES */
-.features-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:34px;
-}
-
-.feature{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:24px;
-  padding:40px 32px;
-  transition:0.4s ease;
-}
-
-.feature:hover{
-  background:rgba(255,255,255,0.08);
-  transform:translateY(-10px);
-}
-
-.feature h3{
-  margin-bottom:12px;
-  color:var(--silver);
-}
-
-.feature p{
-  font-size:15px;
-  line-height:1.6;
-  color:#e5e7eb;
-}
-
-/* PROCESS */
-.process{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-}
-
-.step{
-  text-align:center;
-}
-
-.step span{
-  display:inline-flex;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  align-items:center;
-  justify-content:center;
-  background:var(--white);
-  color:var(--black);
-  font-weight:900;
-  margin-bottom:20px;
-}
-
-.step h4{
-  margin-bottom:10px;
-  color:var(--silver);
-}
-
-/* PRICING */
-.pricing{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
-}
-
-.plan{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.12);
-  border-radius:30px;
-  padding:48px 36px;
-  text-align:center;
-  transition:0.4s ease;
-}
-
-.plan:hover{
-  background:var(--white);
-  color:var(--black);
-  transform:translateY(-14px);
-}
-
-.plan h3{
-  margin-bottom:14px;
-}
-
-.price{
-  font-size:44px;
-  font-weight:900;
-  margin-bottom:24px;
-}
-
-.plan ul{
-  list-style:none;
-  margin-bottom:36px;
-}
-
-.plan li{
-  margin-bottom:12px;
-}
-
-/* CTA */
-.cta{
-  text-align:center;
-  background:
-    radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 60%);
-  border-radius:40px;
-  padding:90px 40px;
-}
-
-.cta h2{
-  font-size:42px;
-  margin-bottom:18px;
-}
-
-.cta p{
-  color:var(--silver);
-  margin-bottom:40px;
-  font-size:18px;
-}
-
-/* FOOTER */
-footer{
-  padding:30px;
-  text-align:center;
-  font-size:14px;
-  color:var(--silver);
-  border-top:1px solid rgba(255,255,255,0.08);
-}
-
-/* MOBILE */
+/* MOBILE MENU */
 @media(max-width:900px){
-  .hero h1{font-size:34px;}
-  nav a{display:none;}
+  .menu-toggle{
+    display:flex;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:8%;
+    background:rgba(0,0,0,0.92);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:16px;
+    padding:20px 22px;
+    flex-direction:column;
+    gap:16px;
+    display:none;
+    box-shadow:0 30px 80px rgba(0,0,0,0.6);
+    animation:fadeSlide 0.35s ease;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .nav-links a{
+    font-size:15px;
+  }
+}
+
+/* MENU ANIMATION */
+@keyframes fadeSlide{
+  from{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 </style>
-</head>
 
-<body>
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
 
-<nav>
-  <div class="logo">FlexiPassport</div>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">Features</a>
-    <a href="#">Process</a>
-    <a href="#">Pricing</a>
-    <a href="#">Contact</a>
-  </div>
-</nav>
+function closeMenu(){
+  document.getElementById("navLinks").classList.remove("show");
+}
+</script>
 
 <!-- HOME SECTION -->
-<section class="hero-style">
+<section id="home" class="hero-style">
 
   <div class="bg"></div>
   <div class="overlay"></div>
@@ -464,7 +344,7 @@ window.addEventListener('mousemove', e=>{
 </script>
 
 <!-- ABOUT SECTION : ULTRA PREMIUM -->
-<section class="about-ultra">
+<section id="about" class="about-ultra">
 
   <!-- BACKGROUND LAYERS -->
   <div class="about-noise"></div>
@@ -639,7 +519,7 @@ about.style.transition = '0.9s ease';
 aboutObserver.observe(about);
 </script>
 <!-- FOUNDER SECTION : ULTRA PREMIUM PLUS (UPGRADED) -->
-<section class="founder-ultra-plus">
+<section id="founder" class="founder-ultra-plus">
 
   <!-- BACKGROUND LAYERS -->
   <div class="bg-grid"></div>
@@ -944,7 +824,7 @@ new IntersectionObserver(e=>{
 </script>
 
 <!-- FEATURES : EDITORIAL PREMIUM -->
-<section class="features-editorial">
+<section id="features" class="features-editorial">
 
   <!-- BACKGROUND -->
   <div class="silver-bg"></div>
@@ -1226,8 +1106,8 @@ rows.forEach(r=>{
   io.observe(r);
 });
 </script>
-<!-- WHY WE'RE DIFFERENT : ADVANCED DIAGRAM -->
-<section class="why-split">
+<!-- WHY WE’RE DIFFERENT : LEFT CONTENT + RIGHT DIAGRAM -->
+<section id="why" class="why-split">
 
   <!-- BACKGROUND -->
   <div class="ws-grid"></div>
@@ -1245,21 +1125,27 @@ rows.forEach(r=>{
         <span>Not Just a Software</span>
       </h2>
 
-      <div class="ws-divider"><span></span></div>
+      <div class="ws-divider">
+        <span></span>
+      </div>
 
       <p class="ws-text">
-        Most platforms solve compliance in isolation. FlexiPassport
-        is engineered as a connected identity system where verification,
-        compliance, and trust operate together — continuously.
+        Most platforms solve compliance in isolation — focusing on
+        documents, checks, or storage. FlexiPassport is designed
+        differently. It operates as a connected identity system
+        where verification, compliance, and trust work together
+        continuously.
       </p>
 
       <p class="ws-text">
-        This architecture eliminates manual checks, reduces risk,
-        and delivers audit-ready compliance without disruption.
+        Instead of reactive checks and manual effort, organisations
+        gain a single, unified identity layer that stays valid,
+        portable, and audit-ready at all times.
       </p>
 
       <p class="ws-highlight">
-        Infrastructure-level trust for modern organisations.
+        This is not point-solution compliance.<br>
+        This is infrastructure-level trust.
       </p>
 
     </div>
@@ -1269,24 +1155,42 @@ rows.forEach(r=>{
 
       <div class="ws-diagram">
 
-        <!-- CENTER CORE -->
-        <div class="ws-core">
+        <!-- CENTER -->
+        <div class="ws-box center">
           <strong>FlexiPassport</strong>
           <span>Identity Core</span>
         </div>
 
-        <!-- ORBIT NODES -->
-        <div class="ws-node n1">Continuous<br>Verification</div>
-        <div class="ws-node n2">Worker-Owned<br>Identity</div>
-        <div class="ws-node n3">Real-Time<br>Compliance</div>
-        <div class="ws-node n4">Automation<br>& Alerts</div>
-        <div class="ws-node n5">Audit-Ready<br>Records</div>
-        <div class="ws-node n6">Privacy-First<br>Design</div>
+        <!-- NODES -->
+        <div class="ws-box top">Continuous<br>Verification</div>
+        <div class="ws-box left">Worker-Owned<br>Identity</div>
+        <div class="ws-box right">Real-Time<br>Compliance</div>
+        <div class="ws-box bottom">Automation<br>& Alerts</div>
 
-        <!-- CONNECTION RING -->
-        <svg class="ws-orbit" viewBox="0 0 500 500">
-          <circle cx="250" cy="250" r="170"/>
-          <circle cx="250" cy="250" r="170" class="travel"/>
+        <!-- CONNECTION SVG -->
+        <svg class="ws-lines" viewBox="0 0 500 500">
+          <line x1="250" y1="110" x2="250" y2="200"/>
+          <line x1="110" y1="250" x2="200" y2="250"/>
+          <line x1="300" y1="250" x2="390" y2="250"/>
+          <line x1="250" y1="300" x2="250" y2="390"/>
+
+          <!-- TRAVELLING DOTS -->
+          <circle r="4">
+            <animateMotion dur="3s" repeatCount="indefinite"
+              path="M250 200 L250 110"/>
+          </circle>
+          <circle r="4">
+            <animateMotion dur="3s" repeatCount="indefinite"
+              path="M200 250 L110 250"/>
+          </circle>
+          <circle r="4">
+            <animateMotion dur="3s" repeatCount="indefinite"
+              path="M300 250 L390 250"/>
+          </circle>
+          <circle r="4">
+            <animateMotion dur="3s" repeatCount="indefinite"
+              path="M250 300 L250 390"/>
+          </circle>
         </svg>
 
       </div>
@@ -1302,7 +1206,7 @@ rows.forEach(r=>{
 .why-split{
   position:relative;
   background:#020617;
-  color:#fff;
+  color:#ffffff;
   padding:220px 20px;
   overflow:hidden;
 }
@@ -1368,14 +1272,16 @@ rows.forEach(r=>{
   position:relative;
   overflow:hidden;
 }
+
 .ws-divider span{
   position:absolute;
   width:60px;
   height:100%;
-  background:#fff;
-  animation:lineMove 3s infinite;
+  background:#ffffff;
+  animation:moveLine 3s infinite;
 }
-@keyframes lineMove{
+
+@keyframes moveLine{
   from{left:-60px;}
   to{left:160px;}
 }
@@ -1396,76 +1302,48 @@ rows.forEach(r=>{
 /* DIAGRAM */
 .ws-diagram{
   position:relative;
-  width:460px;
-  height:460px;
+  width:420px;
+  height:420px;
   margin:auto;
 }
 
-/* CORE */
-.ws-core{
+/* BOX */
+.ws-box{
   position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
   width:160px;
-  height:160px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,0.25);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  padding:16px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:14px;
   text-align:center;
+  font-size:14px;
 }
-.ws-core strong{
+
+.ws-box strong{
+  display:block;
   font-size:16px;
 }
-.ws-core span{
+
+.ws-box span{
   font-size:12px;
   color:#cbd5f5;
 }
 
-/* NODES */
-.ws-node{
-  position:absolute;
-  width:140px;
-  padding:14px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
-  backdrop-filter:blur(10px);
-  border-radius:14px;
-  font-size:13px;
-  text-align:center;
-}
+/* POSITIONS */
+.center{top:170px; left:130px;}
+.top{top:20px; left:130px;}
+.bottom{bottom:20px; left:130px;}
+.left{left:0; top:170px;}
+.right{right:0; top:170px;}
 
-/* NODE POSITIONS (NO OVERLAP) */
-.n1{top:0; left:160px;}
-.n2{top:120px; right:0;}
-.n3{bottom:120px; right:0;}
-.n4{bottom:0; left:160px;}
-.n5{bottom:120px; left:0;}
-.n6{top:120px; left:0;}
-
-/* ORBIT */
-.ws-orbit{
+/* SVG */
+.ws-lines{
   position:absolute;
   inset:0;
-  fill:none;
-  stroke:rgba(255,255,255,0.2);
+  stroke:rgba(255,255,255,0.35);
   stroke-width:2;
-}
-
-.ws-orbit .travel{
-  stroke:#fff;
-  stroke-dasharray:20 300;
-  animation:orbitMove 4s linear infinite;
-}
-
-@keyframes orbitMove{
-  from{stroke-dashoffset:0;}
-  to{stroke-dashoffset:320;}
+  fill:#ffffff;
 }
 
 /* MOBILE */
@@ -1481,22 +1359,22 @@ rows.forEach(r=>{
 </style>
 
 <script>
-/* FADE-IN */
-const el = document.querySelector('.ws-wrap');
-el.style.opacity=0;
-el.style.transform='translateY(50px)';
-el.style.transition='1s ease';
+/* FADE IN */
+const ws = document.querySelector('.ws-wrap');
+ws.style.opacity = 0;
+ws.style.transform = 'translateY(50px)';
+ws.style.transition = '1s ease';
 
 new IntersectionObserver(e=>{
   if(e[0].isIntersecting){
-    el.style.opacity=1;
-    el.style.transform='translateY(0)';
+    ws.style.opacity = 1;
+    ws.style.transform = 'translateY(0)';
   }
-},{threshold:0.25}).observe(el);
+},{threshold:0.25}).observe(ws);
 </script>
 
 <!-- PROCESS SECTION : NEW PREMIUM MODEL -->
-<section class="process-editorial">
+<section id="process" class="process-editorial">
 
   <!-- SILVER BACKGROUND -->
   <div class="silver-bg"></div>
@@ -1745,7 +1623,7 @@ rows.forEach(r=>{
 </script>
 
 <!-- FEATURES SECTION : ROMAN MODEL -->
-<section class="features-roman">
+<section id="features" class="features-roman">
 
   <!-- BACKGROUND -->
   <div class="roman-glow"></div>
@@ -2021,7 +1899,7 @@ new IntersectionObserver(e=>{
 </script>
 
 <!-- ABOUT FLEXIPASSPORT -->
-<section class="about-flexi">
+<section id="about-flexi" class="about-flexi">
 
   <!-- BACKGROUND -->
   <div class="about-silver"></div>
@@ -2234,7 +2112,7 @@ new IntersectionObserver(e=>{
 },{threshold:0.2}).observe(about);
 </script>
 <!-- PROBLEM → SOLUTION SECTION -->
-<section class="ps-black">
+<section id="Problem -> Solution" class="ps-black">
 
   <!-- BACKGROUND EFFECTS -->
   <div class="ps-glow"></div>
@@ -2463,7 +2341,7 @@ new IntersectionObserver(e=>{
 </script>
 
 <!-- BEFORE & AFTER FLEXIPASSPORT : ULTRA PLUS -->
-<section class="ba-ultra-plus">
+<section id="Before & After" class="ba-ultra-plus">
 
   <!-- BACKGROUND LAYERS -->
   <div class="ba-gradient"></div>
@@ -2777,7 +2655,7 @@ new IntersectionObserver(e=>{
 </script>
 
 <!-- WHY FLEXIPASSPORT : ULTRA PREMIUM -->
-<section class="why-ultra">
+<section id="Why" class="why-ultra">
 
   <!-- BACKGROUND -->
   <div class="why-glow"></div>
@@ -3015,7 +2893,7 @@ new IntersectionObserver(e=>{
 
 
 <!-- FAQ SECTION -->
-<section class="faq-silver">
+<section id="faq" class="faq-silver">
 
   <!-- BACKGROUND -->
   <div class="faq-bg"></div>
@@ -3343,7 +3221,7 @@ document.querySelectorAll('.faq-question').forEach(q=>{
 
 
 <!-- CONTACT US SECTION -->
-<section class="contact-ultra">
+<section id="contact" class="contact-ultra">
 
   <!-- BACKGROUND -->
   <div class="contact-silver"></div>
